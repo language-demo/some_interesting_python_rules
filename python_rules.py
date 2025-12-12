@@ -40,3 +40,9 @@ def complicated_code(input):
     return print(input) 
 
 complicated_code("Input test")
+
+def render(file_path):
+    file_path = None
+    file_path.do_something()
+
+render("")
