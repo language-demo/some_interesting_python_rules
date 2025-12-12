@@ -3,10 +3,6 @@ from flask import Flask, make_response, request
 from flask_wtf import CSRFProtect
 from django.http import HttpResponseRedirect
 
-app = Flask(__name__)
-csrf = CSRFProtect()
-csrf.init_app(app)   
-
 def update_and_show_counter(counter):
     counter += 1
 
@@ -41,12 +37,6 @@ def complicated_code(input):
                             if a < b:
                                 input += a
 
-    print("Hello there!")
-    return make_response(input) 
+    return print(input) 
 
-@app.route('/xss2')
-def index2():
-
-    return complicated_code(request.args.get("input"))
-
-print("What a heroic effort!")
+complicated_code("Input test")
